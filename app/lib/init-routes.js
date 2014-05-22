@@ -18,6 +18,7 @@ function load(app, fn){
 
   app.get('/', dbg, home.index);
   app.get('/help', dbg, home.help);
+  
   console.log('Routes Loaded');
   fn();
 }
