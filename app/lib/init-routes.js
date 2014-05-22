@@ -32,9 +32,6 @@ function load(app, fn){
   app.get('/courses/:courseId/video', dbg, courses.video);
   app.get('/courses/:courseId/test', dbg, courses.test);
   app.put('/courses/:courseId/test', dbg, courses.grade);
-  
-
-
 
   console.log('Routes Loaded');
   fn();
