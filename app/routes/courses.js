@@ -1,9 +1,30 @@
 'use strict';
 
-exports.index = (req, res)=>{
-  res.render('home/index', {title: 'Node.js: Home'});
+var traceur = require('traceur');
+var Course = traceur.require(__dirname + '/../models/course.js');
+
+exports.create = (req, res)=>{
+
 };
 
-exports.help = (req, res)=>{
-  res.render('home/help', {title: 'Node.js: Help'});
+exports.new = (req, res)=>{
+
+};
+
+exports.show = (req, res)=>{
+ Course.findByCourseId(req.params.courseId, course=>{
+   res.render('courses/show', {course: course});
+ });
+};
+
+exports.video = (req, res)=>{
+
+};
+
+exports.test = (req, res)=>{
+
+};
+
+exports.grade = (req, res)=>{
+
 };
