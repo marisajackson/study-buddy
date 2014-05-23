@@ -1,7 +1,7 @@
 extends ../shared/template
 
 block content
-  h1.course(data-id=course._id)= course.title
+  h1.course(data-id=course._id.toString())= course.title
 
   nav#courseNav
     h4 Study Materials
@@ -9,6 +9,9 @@ block content
         li.video Video
         li Flashcards
 
-    h4 Test
+    h4.test Test
 
   #course
+
+block scripts
+  script(src='/js/es6/compiled/courses.js')
