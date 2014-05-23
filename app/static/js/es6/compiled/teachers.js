@@ -2,14 +2,17 @@
   'use strict';
   $(document).ready(init);
   function init() {
-    $('#createCourse').on('click', createCourse);
-    $('#add').on('click', addQuestion);
+    $('#createCourse').click(createCourse);
+    $('#courses').on('click', 'form .add', addQuestion);
   }
-  function addQuestion() {
-    var question = $('form#course > .questionField:last-child');
-    $('form#course').append(question.clone());
+  function addQuestion(e) {
+    var question = $('#courses > form .questionField:last-child');
+    console.log(question);
+    $('#questions').append(question.clone());
+    e.preventDefault();
   }
   function createCourse() {
+    console.log('you clicked the CREATE COURSE button');
     ajax("/courses/new", 'GET', null, (function(html) {
       $('#courses').append(html);
     }));
