@@ -21,11 +21,17 @@ exports.show = (req, res)=>{
 };
 
 exports.video = (req, res)=>{
-
+  Course.findByCourseId(req.params.courseId, course=>{
+    var video = course.getVideoURL();
+    res.render('courses/video', {video: video});
+  });
 };
 
 exports.test = (req, res)=>{
-
+  Course.findByCourseId(req.params.courseId, course=>{
+    var x = 0;
+    res.render('courses/test', {course: course, qNumber: x});
+  });
 };
 
 exports.grade = (req, res)=>{

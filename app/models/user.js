@@ -8,7 +8,7 @@ class User {
   constructor(obj) {
     this.email = obj.email;
     this.password = obj.password;
-    this.type = obj.usertype;
+    this.type = obj.loginType;
   }
 
   login(fn) {
