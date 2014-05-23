@@ -4,6 +4,17 @@ block content
   h1 courses/new
 
   form#course
-  input#title(input='text', autofocus=true, placeholder='course name')
-  input#video(input='url', placeholder='video url')
   
+    input#title(input='text', autofocus=true, placeholder='course name')
+    input#video(input='url', placeholder='video url')
+
+    button#add Add A Question
+
+    .questionField
+      input.question(input='text', placeholder='write your question here')
+      input.answer1(input='text', placeholder='correct answer')
+      input.answer2(input='text', placeholder='wrong answer')
+      input.answer3(input='text', placeholder='wrong answer')
+      input.answer4(input='text', placeholder='wrong answer')
+
+    button#submit Submit Test
