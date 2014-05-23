@@ -1,13 +1,17 @@
 'use strict';
 
+// var _ = require('lodash');
 var traceur = require('traceur');
 var Course = traceur.require(__dirname + '/../models/course.js');
 // var User = traceur.require(__dirname + '/../models/user.js');
 
 exports.create = (req, res)=>{
-  console.log('you have created a course using the course form');
-  console.log(req.body);
-  // Course.create(req.session.userId, req.body, ()=>res.redirect('/teachers/index'));
+//   var answers = _.zip(req.body.correct, req.body.wrong1, req.body.wrong2, req.body.wrong3);
+//   var test = req.body.questions.map((q,i)=>{
+//     return { q:q, a:answers[i] };
+//   });
+// console.log(test);
+  Course.create(req.session.userId, req.body, ()=>res.redirect('/teachers'));
 };
 
 exports.new = (req, res)=>{

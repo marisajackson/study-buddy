@@ -14,7 +14,6 @@
   }
 
   function submitTest(){
-    debugger;
     alert('I work!');
   }
 
