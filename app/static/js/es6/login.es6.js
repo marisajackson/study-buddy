@@ -1,0 +1,22 @@
+/* global ajax */
+
+(function(){
+  'use strict';
+
+  $(document).ready(init);
+
+  function init() {
+    $('.teacher, .student').click(login);
+  }
+
+  function login() {
+    var loginType = 'student';
+    if($(this).hasClass('teacher')) {
+      loginType = 'teacher';
+    }
+    ajax('/showlogin', 'get', {loginType:loginType}, html=>{
+      $('#splash-login').empty().append(html);
+    });
+  }
+
+})();

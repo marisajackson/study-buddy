@@ -5,5 +5,9 @@ exports.index = (req, res)=>{
 };
 
 exports.login = (req, res)=>{
-  res.render('home/login', {title: 'Study Buddy Login'});
+};
+
+exports.showlogin = (req, res)=>{
+console.log(req.query.loginType);
+  res.render('home/login', {loginType:req.query.loginType});
 };
