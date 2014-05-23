@@ -1,4 +1,8 @@
 extends ../shared/template
 
 block content
-  h1 courses/show
+  h1= course.title
+
+  each question in course.test
+    h2= question.question
+    
