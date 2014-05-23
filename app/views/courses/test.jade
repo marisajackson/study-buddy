@@ -1,4 +1,11 @@
-extends ../shared/template
+h1 Test
 
-block content
-  h1 courses/test
+form#test
+  each question in course.test
+    #question
+      p= question.question
+      #answers
+        each answer in question.answers
+          #answer
+            input(type='radio', name=question.question, value=answer)
+            span= answer

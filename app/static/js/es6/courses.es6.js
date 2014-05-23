@@ -14,14 +14,14 @@
   function video(){
     var courseId = $('.course').attr('data-id');
     ajax(`/courses/${courseId}/video`, 'get', null, html=>{
-      $('#course').append(html);
+      $('#course').empty().append(html);
     });
   }
 
   function test(){
     var courseId = $('.course').attr('data-id');
     ajax(`/courses/${courseId}/test`, 'get', null, html=>{
-      $('#course').append(html);
+      $('#course').empty().append(html);
     });
   }
 
