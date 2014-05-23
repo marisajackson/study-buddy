@@ -7,7 +7,6 @@
     $('#courses').on('submit', 'form', submitTest);
   }
   function submitTest() {
-    debugger;
     alert('I work!');
   }
   function addQuestion(e) {
