@@ -1,11 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Ek+Mukta:500);
+
+
+@firstSecondary: #00B945;
+@secondSecondary: #FF8500;
+@backgroundColor: #191A1B;
+@tertiary: rgba(43, 44, 44, 0.9);
+
+
 /*
 ***********************
 * =alexMASTER
 ***********************
 */
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: auto 0;
+  font-family: 'Ek Mukta', sans-serif;
+  background-color: @backgroundColor;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+/*=============Buttons===============*/
 
 
+button {
+  width: 175px;
+  height: 80px;
+  margin: 10px;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+  border: 5px solid white;
+  border-radius: 5px;
+  background-color: @backgroundColor;
+  color: white;
+  transition: background-color 1s ease;
+}
+
+button.round {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+button:hover {
+  background-color: @firstSecondary;
+}
+
+button.teacher:hover {
+  background-color: @secondSecondary;
+}
+
+button.student:hover {
+  background-color: @firstSecondary;
+}
+
+button:active {
+  color: @backgroundColor;
+  border: @backgroundColor;
+  transition: none;
+}
+
+
+/*=============Divs===============*/
+
+#testDivButton {
+  text-align: center;
+}
+
+#testDiv {
+  width: 90%;
+  height: 400px;
+  position: relative;
+  display: block;
+  background-color: @tertiary;
+  margin: 5%;
+  padding: 2% 0 0 0;
+  // border: 5px solid white;
+  border-radius: 10px;
+  font-size: 1.5em;
+}
+
+#innerTestDiv1 {
+  width: 50%;
+  height: 20%;
+  position: relative;
+  float: left;
+  left: 40%;
+  top: -20%;
+  margin: 0;
+  background-color: @firstSecondary;
+  color: white;
+  border-radius: 10px;
+}
+
+p {
+  margin: 5%;
+}
 
 
 
