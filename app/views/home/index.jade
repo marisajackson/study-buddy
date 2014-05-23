@@ -4,5 +4,9 @@ block content
   h1 Study Buddy
 
   #splash-login
-    .teacher-login
     .student-login
+      a(href='/login?type=student')
+        button I'm a Student
+    .teacher-login
+      a(href='/login?type=teacher')
+        button I'm a Teacher
