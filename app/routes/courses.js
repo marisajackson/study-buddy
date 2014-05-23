@@ -36,6 +36,10 @@ exports.test = (req, res)=>{
 
 exports.grade = (req, res)=>{
   Course.findByCourseId(req.params.courseId, course=>{
-    course.grade(req.body);
+    course.grade(req.body, req.session.userId);
+    console.log(course);
+    course.save(()=>{
+      res.redirect('/students');
+    });
   });
 };

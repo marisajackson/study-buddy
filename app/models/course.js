@@ -43,8 +43,27 @@ class Course {
     });
   }
 
-  grade(answers){
-    // answers.keys
+  grade(answers, userId){
+    var questions = Object.keys(answers).toString().split(',');
+    var answerArray = questions.map(x=>{
+      return answers[x];
+    });
+    var score = this.test.length;
+
+    answerArray.map((a, i)=>{
+      if(answerArray[i] !== this.test[i].answers[0]){
+        score -= 1;
+      }
+    });
+    
+    var percentScore = (score / this.test.length).toFixed(2) * 100;
+    this.students[userId] = percentScore;
+  }
+
+  save(fn){
+    courses.save(this, (e,c)=>{
+      fn(c);
+    });
   }
 
 }
