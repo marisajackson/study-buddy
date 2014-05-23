@@ -11,11 +11,11 @@ exports.index = (req, res)=>{
     if(req.session.userType === 'teacher') {
       res.redirect('/teachers');
     }
-    else if(req.session.userType === 'student') {
+    else if(req.session.userType === 'student'){
       res.redirect('/students');
     }
-    else{
-      res.redirect('/userTypenotrecognized'); // if we go off the rails
+    else {
+      res.redirect('/userTypenotteachernotstudent'); // if we go off the rails
     }
   }
 };
@@ -46,6 +46,7 @@ console.log(req.query.loginType);
 };
 
 exports.logout = (req, res)=>{
+console.log('logged out');
   req.session.userId = null;
   req.session.userType = null;
   res.redirect('/');
