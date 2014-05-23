@@ -32,6 +32,16 @@ class Course {
     return videoKey;
     }
 
+  answerScramble(){
+    this.test.forEach(question=>{
+    question.answers =  _.shuffle(question.answers);
+    });
+  }
+
+  grade(answers){
+    // answers.keys
+  }
+
 }
 
 
