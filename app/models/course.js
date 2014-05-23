@@ -6,16 +6,21 @@ var Mongo = require('mongodb');
 var _ = require('lodash');
 
 class Course {
-  // static create(userId, order, fn){
-  //   var c = new Course();
-  //   c.userId = Mongo.ObjectID(userId);
-  //   c.date = new Date();
-  // }
-  //
-  //
-  //
-  //
-  //
+  static create(userId, order, fn){
+    var c = new Course();
+    c.date = new Date();
+    c.teacherId = Mongo.ObjectID(userId);
+    c.videoURL = null;
+    c.test = [];
+    c.students = [];
+  }
+
+
+
+
+
+
+
 
 
   static findByCourseId(courseId, fn){

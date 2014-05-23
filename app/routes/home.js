@@ -9,14 +9,13 @@ exports.index = (req, res)=>{
   }
   else {
     if(req.session.userType === 'teacher') {
-    console.log('redirect to teachers');
       res.redirect('/teachers');
     }
-    else if(req.session.userType === 'student'){
+    else if(req.session.userType === 'student') {
       res.redirect('/students');
     }
-    else {
-      res.redirect('/userTypenotteachernotstudent');
+    else{
+      res.redirect('/userTypenotrecognized'); // if we go off the rails
     }
   }
 };

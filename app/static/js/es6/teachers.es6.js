@@ -10,14 +10,18 @@
   function init(){
     $('#createCourse').click(createCourse);
     $('#courses').on('click', 'form .add', addQuestion);
+    $('#courses').on('submit', 'form', submitTest);
+  }
+
+  function submitTest(){
+    debugger;
+    alert('I work!');
   }
 
   function addQuestion(e){
-    // var question = $('#courses > .form .questionField:last-child');
     var question = $('#courses > form .questionField:last-child');
     console.log(question);
     $('#questions').append(question.clone());
-
     e.preventDefault();
   }
 

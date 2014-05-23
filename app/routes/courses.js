@@ -7,7 +7,7 @@ var Course = traceur.require(__dirname + '/../models/course.js');
 exports.create = (req, res)=>{
   console.log('you have created a course using the course form');
   console.log(req.body);
-  Course.create(req.session.userId, req.body, ()=>res.redirect('/teachers/index'));
+  // Course.create(req.session.userId, req.body, ()=>res.redirect('/teachers/index'));
 };
 
 exports.new = (req, res)=>{
