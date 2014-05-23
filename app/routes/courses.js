@@ -2,13 +2,14 @@
 
 var traceur = require('traceur');
 var Course = traceur.require(__dirname + '/../models/course.js');
+// var User = traceur.require(__dirname + '/../models/user.js');
 
 exports.create = (req, res)=>{
 
 };
 
 exports.new = (req, res)=>{
-
+  console.log('You are creating a new course form');
 };
 
 exports.show = (req, res)=>{
