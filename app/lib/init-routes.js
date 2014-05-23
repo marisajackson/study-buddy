@@ -21,6 +21,7 @@ function load(app, fn){
 
   app.get('/', dbg, home.index);
   app.get('/login', dbg, home.login);
+  app.get('/showlogin', dbg, home.showlogin);
 
   app.get('/teachers', dbg, teachers.index);
 
