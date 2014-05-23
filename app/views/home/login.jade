@@ -1,5 +1,9 @@
 extends ../shared/template
 
 block content
-  h1 home/login
-  h3= loginType
+  .testDivButton
+    form(action='/login' method='POST')
+      input.email(type='email' name='email' placeholder='Email' autofocus=true)
+      input.password(type='password' name='password')
+      input.login-type(type='hidden' name='loginType' value='#{loginType}')
+      button Submit

@@ -1,9 +1,8 @@
 'use strict';
 
 exports.index = (req, res)=>{
-  res.render('home/index', {title: 'Node.js: Home'});
-};
-
-exports.help = (req, res)=>{
-  res.render('home/help', {title: 'Node.js: Help'});
+  if(req.session.userId===null || req.session.userId === undefined || req.session.userType !=='student') {
+    res.redirect('/');
+  }
+  res.render('students/index', {title: 'Students Index'});
 };
