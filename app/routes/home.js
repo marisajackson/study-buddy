@@ -4,17 +4,18 @@ var traceur = require('traceur');
 var User = traceur.require(__dirname + '/../models/user.js');
 
 exports.index = (req, res)=>{
-  if(req.session.userId === undefined || req.session.userId === null) {
+  if(!req.session.userId) {
     res.render('home/index', {title: 'Study Buddy'});
   }
   else {
     if(req.session.userType === 'teacher') {
-    console.log('redirect to teachers');
       res.redirect('/teachers');
     }
-    else {
-    console.log('redirect to students');
+    else if(req.session.userType === 'student') {
       res.redirect('/students');
+    }
+    else{
+      res.redirect('/userTypenotrecognized'); // if we go off the rails
     }
   }
 };
