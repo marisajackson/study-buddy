@@ -1,8 +1,14 @@
 extends ../shared/template
 
 block content
-  h1= course.title
+  h1.course(data-id=course._id)= course.title
 
-  each question in course.test
-    h2= question.question
-    
+  nav#courseNav
+    h4 Study Materials
+      ul
+        li.video Video
+        li Flashcards
+
+    h4 Test
+
+  #course
