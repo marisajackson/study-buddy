@@ -14,6 +14,7 @@ class Course {
     var c = new Course();
     c.date = new Date();
     c.teacherId = Mongo.ObjectID(userId);
+    c.title = crsData.title;
     c.videoURL = crsData.videoURL;
     c.test = test;
     c.students = {};
