@@ -1,6 +1,7 @@
 h1 Test
 
-form#test
+form#test(action='/courses/#{course._id}/test', method='post')
+  input(type='hidden', name='_method', value='PUT')
   each question in course.test
     #question
       p= question.question
@@ -9,3 +10,4 @@ form#test
           #answer
             input(type='radio', name=question.question, value=answer)
             span= answer
+  button.submitTest Submit Test

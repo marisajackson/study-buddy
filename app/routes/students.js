@@ -1,8 +1,13 @@
 'use strict';
 
+var traceur = require('traceur');
+var Course = traceur.require(__dirname + '/../models/course.js');
+
 exports.index = (req, res)=>{
-  if(req.session.userId===null || req.session.userId === undefined || req.session.userType !=='student') {
+  if(!req.session.userId || req.session.userType !=='student') {
     res.redirect('/');
   }
-  res.render('students/index', {title: 'Students Index'});
+  Course.findAll(courses=>{
+    res.render('students/index', {courses: courses, title: 'Students Index'});
+  });
 };

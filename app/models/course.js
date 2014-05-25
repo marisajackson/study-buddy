@@ -6,16 +6,32 @@ var Mongo = require('mongodb');
 var _ = require('lodash');
 
 class Course {
-  // static create(userId, order, fn){
-  //   var c = new Course();
-  //   c.userId = Mongo.ObjectID(userId);
-  //   c.date = new Date();
-  // }
-  //
-  //
-  //
-  //
-  //
+  static create(userId, crsData, fn){
+    var answers = _.zip(crsData.correct, crsData.wrong1, crsData.wrong2, crsData.wrong3);
+    var test = crsData.questions.map((q,i)=>{
+      return { q:q, a:answers[i] };
+    });
+    var c = new Course();
+    c.date = new Date();
+    c.teacherId = Mongo.ObjectID(userId);
+    c.videoURL = crsData.videoURL;
+    c.test = test;
+    c.students = {};
+    c.save(()=>{
+      fn();
+    });
+  }
+
+
+
+
+  static findAll(fn) {
+    courses.find({},{test:false, videoURL:false}).toArray((e,c)=>{
+      fn(c);
+    });
+  }
+
+
 
 
   static findByCourseId(courseId, fn){
@@ -31,6 +47,35 @@ class Course {
     var videoKey = key[1];
     return videoKey;
     }
+
+  answerScramble(){
+    this.test.forEach(question=>{
+    question.answers =  _.shuffle(question.answers);
+    });
+  }
+
+  grade(answers, userId){
+    var questions = Object.keys(answers).toString().split(',');
+    var answerArray = questions.map(x=>{
+      return answers[x];
+    });
+    var score = this.test.length;
+
+    answerArray.map((a, i)=>{
+      if(answerArray[i] !== this.test[i].answers[0]){
+        score -= 1;
+      }
+    });
+
+    var percentScore = (score / this.test.length).toFixed(2) * 100;
+    this.students[userId] = percentScore;
+  }
+
+  save(fn){
+    courses.save(this, (e,c)=>{
+      fn(c);
+    });
+  }
 
 }
 

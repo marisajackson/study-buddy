@@ -1,13 +1,12 @@
 'use strict';
 
+// var _ = require('lodash');
 var traceur = require('traceur');
 var Course = traceur.require(__dirname + '/../models/course.js');
 // var User = traceur.require(__dirname + '/../models/user.js');
 
 exports.create = (req, res)=>{
-  console.log('you have created a course using the course form');
-  console.log(req.body);
-  Course.create(req.session.userId, req.body, ()=>res.redirect('/teachers/index'));
+  Course.create(req.session.userId, req.body, ()=>res.redirect('/teachers'));
 };
 
 exports.new = (req, res)=>{
@@ -29,11 +28,17 @@ exports.video = (req, res)=>{
 
 exports.test = (req, res)=>{
   Course.findByCourseId(req.params.courseId, course=>{
-    var x = 0;
-    res.render('courses/test', {course: course, qNumber: x});
+    course.answerScramble();
+    res.render('courses/test', {course: course});
   });
 };
 
 exports.grade = (req, res)=>{
-
+  Course.findByCourseId(req.params.courseId, course=>{
+    course.grade(req.body, req.session.userId);
+    console.log(course);
+    course.save(()=>{
+      res.redirect('/students');
+    });
+  });
 };
