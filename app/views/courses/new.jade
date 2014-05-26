@@ -1,16 +1,19 @@
 extends ../shared/template
 
 block content
-  h1 New Course
 
   form#courseCreate(action='/courses', method='post')
+
+    h1 New Course
 
     input#title(input='text', name='title', autofocus=true, placeholder='course name')
     input#video(input='url', name='videoURL' placeholder='video url')
 
-    button.add Add A Question
-
     #questions
+
+      h1 Questions & Answers
+      button.add Add A Question
+
       .questionField
         input.questions(input='text', name='questions', placeholder='write your question here')
         input.answers1(input='text', name='correct', placeholder='correct answer')
@@ -18,4 +21,4 @@ block content
         input.answers3(input='text', name='wrong2', placeholder='wrong answer')
         input.answers4(input='text', name='wrong3', placeholder='wrong answer')
 
-    button#submit Submit Test
+    button#submitCourse Submit Test

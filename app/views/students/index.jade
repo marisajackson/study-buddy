@@ -4,8 +4,11 @@ block content
   include ../shared/navbar
 
   h1 Welcome Student
-  each course in courses
-    .course
-      a(href='/courses/#{course._id.toString()}') #{course.title}
 
   #studentDiv
+
+    #coursesList
+    
+      each course in courses
+        .course
+          a(href='/courses/#{course._id.toString()}') #{course.title}

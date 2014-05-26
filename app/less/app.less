@@ -2,6 +2,7 @@
 
 
 @green: #00B945;
+@greenOp: rgba(0, 186, 62, 0.75);
 @pink: #D2006B;
 @blue: #1924B1;
 @blueOp: rgba(25, 45, 178, 0.75);
@@ -35,25 +36,17 @@ html, body {
   margin: 10% 0 5% 0;
 }
 
-#logoNav {
-  width: 20%;
-  height: 100%;
-  background-image: url('/img/sbl-02.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  float: left;
-}
-
-
 /*=============Navbar===============*/
 
 #navbar {
-  width: 100%;
-  height: 10%;
+  width: 98%;
+  height: 12%;
+  margin: 0;
   background-color: @tertiary;
   border-radius: 0 0 5px 5px;
   font-size: 2em;
   text-align: right;
+  padding: 2%;
 }
 
 a {
@@ -61,17 +54,30 @@ a {
 }
 
 a.logout {
+  width: 10%;
   margin: 5% 2% 0 0;
   position: relative;
   top: 20%;
+}
+
+a:visited {
+  color: @green;
 }
 
 a:hover {
   color: @pink;
 }
 
-a:visited {
-  color: @green;
+#logoNav {
+  width: 80%;
+  height: 100%;
+  background-image: url('/img/sbl-02.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  float: left;
+  display: inline-block;
+
 }
 
 /*=============Student Nav===============*/
@@ -85,6 +91,12 @@ nav#courseNav {
   padding: 0 0 0 2%;
   border: 5px solid white;
   border-radius: 10px;
+}
+
+#courseLogo {
+  width: 60%;
+  height: 15%;
+  text-align: center;
 }
 
 
@@ -180,9 +192,41 @@ input {
 }
 
 #studentDiv {
-  height: 50%;
-  position: relative;
-  margin: 5% 0 5% 0;
+  height: 65%;
+  overflow: auto;
+}
+
+#coursesList {
+  width: 45%;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: @blueOp;
+  text-align: left;
+  margin: 0 25%;
+  padding-left: 5%;
+}
+
+/*=============New User/Login Form===============*/
+
+form#login {
+  width: 50%;
+  text-align: left;
+  margin: 0 25%;
+  padding-left: 20%;
+}
+
+input.email,
+input.password,
+input.login-type {
+  display: block;
+  margin: 0;
+}
+
+button#submitUser {
+  height: 60px;
+  margin-top: 2%;
+  letter-spacing: normal;
+  margin-left: 4%;
 }
 
 /*=============New Course Form===============*/
@@ -205,9 +249,14 @@ button.add {
   height: 60px;
 }
 
-button#submit {
+button#submitCourse {
   height: 60px;
   letter-spacing: normal;
+}
+
+#questions {
+  height: 400px;
+  overflow: auto;
 }
 
 .questionField {
