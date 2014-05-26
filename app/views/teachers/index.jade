@@ -2,11 +2,27 @@ extends ../shared/template
 
 block content
   include ../shared/navbar
-  h1 teachers/index
+  h1 Welcome Teacher
 
-  button#createCourse Create Course
+  button#createCourse Create a Course
 
   #courses
+
+  #pastCourses
+    h1 Previously Created Courses
+    each course in courses
+      .pastCourse
+        h3.courseTitle= course.title
+        h4 Date Created:
+        p= course.date
+        h4 Enrolled Students:
+        p course.students
+
+
+
+
+
+
 
 block scripts
   script(src='/js/es6/compiled/teachers.js')
