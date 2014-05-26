@@ -15,7 +15,6 @@
 
 
   function submitTest(){
-    alert('I work!');
   }
 
   function addQuestion(e){
