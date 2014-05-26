@@ -5,10 +5,24 @@ block content
 
   h1 Welcome Student
 
+  each course in courses
+    table.course
+      tbody
+        tr
+          td
+            a(href='/courses/#{course._id.toString()}') #{course.title}
+          td
+            - var score = course.students[userId];
+            -if(typeof(score) !== 'undefined' && score !== null)
+              span(class=(score<70)?'fail':'pass')  #{score.toFixed(2)} %
+            -else
+              span Not taken
+
+
   #studentDiv
 
     #coursesList
-    
+
       each course in courses
         .course
           a(href='/courses/#{course._id.toString()}') #{course.title}
