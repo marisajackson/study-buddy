@@ -2,12 +2,14 @@ h1 Test
 
 form#test(action='/courses/#{course._id}/test', method='post')
   input(type='hidden', name='_method', value='PUT')
+  - var count = 1
   each question in course.test
-    #question
+    div.question.hidden(class='question#{count++}')
       p= question.question
       #answers
         each answer in question.answers
           #answer
             input(type='radio', name=question.question, value=answer)
             span= answer
-  button.submitTest Submit Test
+      button.next Next
+      button.hidden.submitTest Submit Test
