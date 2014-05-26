@@ -1,8 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Ek+Mukta:500);
 
 
-/*green*/@firstSecondary: #00B945;
-/*orange*/@secondSecondary: #FF8500;
+@green: #00B945;
+@pink: #D2006B;
+@blue: #1924B1;
+@blueOp: rgba(25, 45, 178, 0.75);
 /*dark-gray*/@backgroundColor: #191A1B;
 /*light-gray*/@tertiary: rgba(43, 44, 44, 0.9);
 
@@ -23,10 +25,25 @@ html, body {
   text-align: center;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3em;
+#logoMain {
+  width: 100%;
+  height: 20%;
+  background-image: url('/img/sbl-02.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10% 0 5% 0;
 }
+
+#logoNav {
+  width: 20%;
+  height: 100%;
+  background-image: url('/img/sbl-02.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: left;
+}
+
 
 /*=============Navbar===============*/
 
@@ -37,21 +54,38 @@ h1 {
   border-radius: 0 0 5px 5px;
   font-size: 2em;
   text-align: right;
-  padding: 5px 10px 0 0;
 }
 
 a {
   text-decoration: none;
 }
 
+a.logout {
+  margin: 5% 2% 0 0;
+  position: relative;
+  top: 20%;
+}
+
 a:hover {
-  color: @secondSecondary;
+  color: @pink;
 }
 
 a:visited {
-  color: @firstSecondary;
+  color: @green;
 }
 
+/*=============Student Nav===============*/
+
+nav#courseNav {
+  width: 15%;
+  float: left;
+  left: -15px;
+  background-color: green;
+  text-align: left;
+  padding: 0 0 0 2%;
+  border: 5px solid white;
+  border-radius: 10px;
+}
 
 
 /*=============Buttons===============*/
@@ -77,15 +111,15 @@ button.round {
 }
 
 button:hover {
-  background-color: @firstSecondary;
+  background-color: @green;
 }
 
 button.teacher:hover {
-  background-color: @secondSecondary;
+  background-color: @blue;
 }
 
 button.student:hover {
-  background-color: @firstSecondary;
+  background-color: @green;
 }
 
 button:active {
@@ -125,7 +159,7 @@ button:active {
   left: 40%;
   top: -20%;
   margin: 0;
-  background-color: @firstSecondary;
+  background-color: @green;
   color: white;
   border-radius: 10px;
 }
@@ -138,17 +172,31 @@ input {
   color: black;
 }
 
+#teacherDiv, #studentDiv {
+  width: 100%;
+  background-image: url('/img/classroomColors.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#studentDiv {
+  height: 50%;
+  position: relative;
+  margin: 5% 0 5% 0;
+}
+
 /*=============New Course Form===============*/
 
 
 
 form#courseCreate {
-  width: 60%;
+  width: 45%;
   border: 5px solid white;
-  border-radius: 5px;
-  background-color: @secondSecondary;
+  border-radius: 10px;
+  background-color: @blueOp;
   text-align: left;
-  margin: 0 20%;
+  margin: 0 25%;
+  padding-left: 5%;
 }
 
 button.add {
@@ -162,12 +210,16 @@ button#submit {
   letter-spacing: normal;
 }
 
+.questionField {
+  margin-bottom: 20px;
+}
+
 input.questions,
 input.answers1,
 input.answers2,
 input.answers3,
 input.answers4 {
-
+  display: block;
 }
 
 /*=============Past Courses===============*/
@@ -176,6 +228,7 @@ input.answers4 {
   width: 100%;
   height: 40%;
   background-color: @tertiary;
+  margin: 0;
 }
 
 .pastCourse {
@@ -185,7 +238,7 @@ input.answers4 {
   float: left;
   padding: 1% 2% 2% 2%;
   margin: 2%;
-  background-color: @firstSecondary;
+  background-color: @green;
 
 }
 
@@ -193,8 +246,6 @@ h3.courseTitle {
   width: 100%;
   text-decoration: underline;
 }
-
-
 
 
 /*
@@ -216,7 +267,7 @@ h3.courseTitle {
 }
 
 .video:hover, .test:hover {
-  color: @firstSecondary;
+  color: @green;
 }
 
 #question {
