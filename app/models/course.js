@@ -9,7 +9,7 @@ class Course {
   static create(userId, crsData, fn){
     var answers = _.zip(crsData.correct, crsData.wrong1, crsData.wrong2, crsData.wrong3);
     var test = crsData.questions.map((q,i)=>{
-      return { q:q, a:answers[i] };
+      return { question:q, answers:answers[i] };
     });
     var c = new Course();
     c.date = new Date();

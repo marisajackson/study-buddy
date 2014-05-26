@@ -6,9 +6,7 @@
     $('#courses').on('click', 'form .add', addQuestion);
     $('#courses').on('submit', 'form', submitTest);
   }
-  function submitTest() {
-    alert('I work!');
-  }
+  function submitTest() {}
   function addQuestion(e) {
     var question = $('#courses > form .questionField:last-child');
     console.log(question);
