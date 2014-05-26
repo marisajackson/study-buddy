@@ -270,25 +270,32 @@ h3.courseTitle {
   color: @green;
 }
 
-#question {
+.question {
   text-align: left;
+  position: absolute;
+  width: 799px;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 #answers {
   margin-left: 50px;
-}
-
-#answer {
-  display: inline-block;
-  width: 100px;
+  font-size: 30px;
 }
 
 p {
-  margin-bottom: 2px;
+  margin: 2px;
+  font-size: 50px;
 }
 
 input {
   margin: 3px;
+}
+
+.next, .submitTest {
+  float: right;
 }
 
 
