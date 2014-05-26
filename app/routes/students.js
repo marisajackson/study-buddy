@@ -8,6 +8,6 @@ exports.index = (req, res)=>{
     res.redirect('/');
   }
   Course.findAll(courses=>{
-    res.render('students/index', {courses: courses, title: 'Students Index'});
+    res.render('students/index', {userId:req.session.userId, courses: courses, title: 'Students Index'});
   });
 };
