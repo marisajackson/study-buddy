@@ -13,6 +13,7 @@
     $('#courses').on('submit', 'form', submitTest);
   }
 
+
   function submitTest(){
     alert('I work!');
   }

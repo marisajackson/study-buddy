@@ -14,6 +14,7 @@ class Course {
     var c = new Course();
     c.date = new Date();
     c.teacherId = Mongo.ObjectID(userId);
+    c.title = crsData.title;
     c.videoURL = crsData.videoURL;
     c.test = test;
     c.students = {};
@@ -23,16 +24,19 @@ class Course {
   }
 
 
-
+  static findAllByTeacherId(userId, fn){
+    userId = Mongo.ObjectID(userId);
+    courses.find({teacherId:userId}).toArray((e,c)=>{
+      var course = _.create(Course.prototype, course);
+      fn(c);
+    });
+  }
 
   static findAll(fn) {
     courses.find({},{test:false, videoURL:false}).toArray((e,c)=>{
       fn(c);
     });
   }
-
-
-
 
   static findByCourseId(courseId, fn){
       courseId = Mongo.ObjectID(courseId);
