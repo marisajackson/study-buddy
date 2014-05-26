@@ -11,6 +11,9 @@
     var question = $('#courses > form .questionField:last-child');
     console.log(question);
     $('#questions').append(question.clone());
+    $('#questions div:last-child input').each((function(a, b) {
+      return $(b).val('');
+    }));
     e.preventDefault();
   }
   function createCourse() {
