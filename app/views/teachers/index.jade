@@ -3,7 +3,7 @@ extends ../shared/template
 block content
   include ../shared/navbar
   h1 Welcome Teacher
-  
+
   #teacherDiv
 
     button.teacher#createCourse Create a Course
@@ -18,8 +18,12 @@ block content
         h4 Date Created:
         p= course.date
         h4 Enrolled Students:
-        p= course.students
-
+        - var numEnroll = Object.keys(course.students)
+        - var numPassed = numEnroll.filter(function(s){ return (course.students[s]) >= 70;}).length
+        if(numEnroll.length)
+          p #{numEnroll.length} enrolled, #{100*(numPassed/numEnroll.length).toFixed(1)} % passed
+        else
+          p 0 enrolled
 
 
 
