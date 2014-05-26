@@ -3,10 +3,12 @@ extends ../shared/template
 block content
   include ../shared/navbar
   h1 Welcome Teacher
+  
+  #teacherDiv
 
-  button#createCourse Create a Course
+    button.teacher#createCourse Create a Course
 
-  #courses
+    #courses
 
   #pastCourses
     h1 Previously Created Courses
@@ -16,7 +18,7 @@ block content
         h4 Date Created:
         p= course.date
         h4 Enrolled Students:
-        p course.students
+        p= course.students
 
 
 
