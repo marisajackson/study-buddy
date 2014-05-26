@@ -4,9 +4,12 @@ block content
   include ../shared/navbar
 
   h1 Welcome Student
-  each course in courses
+
+  #studentDiv
+
     table.course
       tbody
+      each course in courses
         tr
           td
             a(href='/courses/#{course._id.toString()}') #{course.title}
@@ -16,7 +19,3 @@ block content
               span(class=(score<70)?'fail':'pass')  #{score.toFixed(2)} %
             -else
               span Not taken
-
-
-
-  #studentDiv
