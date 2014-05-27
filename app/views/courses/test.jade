@@ -5,11 +5,11 @@ form#test(action='/courses/#{course._id}/test', method='post')
   - var count = 1
   each question in course.test
     div.question.hidden(class='question#{count++}')
-      p= question.question
+      h2= question.question
       #answers
         each answer in question.answers
-          #answer
-            input(type='radio', name=question.question, value=answer)
-            span= answer
+          .answer
+            input.answer(type='radio', name=question.question, value=answer)
+            span.answerText= answer
       button.next Next
       button.hidden.submitTest Submit Test

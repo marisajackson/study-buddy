@@ -13,7 +13,7 @@
   }
 
   function next(e){
-    if($(this).parent().children('#answers').children('#answer').children('input:checked').length){
+    if($(this).parent().children('#answers').children('.answer').children('input:checked').length){
       if($(this).parent().next('.hidden').next().length === 0){
         $(this).parent().next('.hidden').children('.next').remove();
         $('.submitTest').removeClass('hidden');

@@ -44,7 +44,7 @@ html, body {
 /*=============Navbar===============*/
 
 #navbar {
-  width: 98%;
+  width: 96%;
   height: 12%;
   margin: 0;
   background-color: @tertiary;
@@ -58,12 +58,17 @@ a {
   text-decoration: none;
 }
 
-a.logout {
+a.logout, a.logout:visited {
   width: 10%;
   margin: 5% 2% 0 0;
   position: relative;
   top: 20%;
   text-decoration: underline;
+  color: white;
+}
+
+a.logout:hover {
+  color: @pink;
 }
 
 a:visited {
@@ -133,7 +138,7 @@ button:hover {
 }
 
 button.teacher:hover {
-  background-color: @blue;
+  background-color: @pink;
 }
 
 button.student:hover {
@@ -195,9 +200,10 @@ input {
   background-image: url('/img/classroomColors.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
 }
 
-/*=============New User/Login Form===============*/
+/*=============Student Courses Table===============*/
 
 table.course {
   width: 35%;
@@ -208,10 +214,12 @@ table.course {
   margin: 5% 30%;
   padding-left: 5%;
   border-collapse: collapse;
+  font-size: 2em;
 }
 
 tr {
   border: 5px solid white;
+  line-height: 80px;
 }
 
 td:nth-child(odd) {
@@ -230,22 +238,12 @@ td:nth-child(even) {
   overflow: auto;
 }
 
-
-  // width: 45%;
-  // border: 5px solid white;
-  // border-radius: 10px;
-  // background-color: @blueOp;
-  // text-align: left;
-  // margin: 0 25%;
-  // padding-left: 5%;
-
-
 /*=============New User/Login Form===============*/
 
 form#login {
   width: 50%;
   text-align: left;
-  margin: 0 25%;
+  margin: 0 27% 0 23%;
   padding-left: 20%;
 }
 
@@ -281,11 +279,13 @@ button.add {
   letter-spacing: normal;
   width: 300px;
   height: 60px;
+  margin: 0 0 2% 0;
 }
 
 button#submitCourse {
   height: 60px;
   letter-spacing: normal;
+  margin: 0 0 2% 0;
 }
 
 #questions {
@@ -295,6 +295,11 @@ button#submitCourse {
 
 .questionField {
   margin-bottom: 20px;
+}
+
+input#title,
+input#video {
+  margin: 0 2% 0 0;
 }
 
 input.questions,
@@ -337,12 +342,13 @@ h3.courseTitle {
 ***********************
 */
 
+/*=============Course===============*/
+
 #course {
-  height: 60%;
+  height: 70%;
   width: 50%;
   border: 5px solid white;
   border-radius: 10px;
-  background-color: @green;
   margin: auto;
   overflow: auto;
 }
@@ -351,36 +357,65 @@ h3.courseTitle {
   position: fixed;
 }
 
-.video:hover, .test:hover {
-  color: @green;
+
+/*=============Test===============*/
+
+
+form#test {
+  width: 100%;
+  height: 100%;
+  background-color: @green;
+  position: relative;
+  text-align: center;
 }
 
 .question {
+  width: 100%;
   text-align: left;
   position: absolute;
-  width: 799px;
+  margin-left: 2%;
+
+  // height: 10%;
+}
+
+.question h2 {
+  font-size: 2em;
+}
+
+#answers {
+  width: 100%;
+}
+
+input.answer {
+  width: 2%;
+  margin: 1%;
+}
+
+.answer {
+  width: 95%;
+}
+
+.answerText {
+  font-size: 1.5em;
 }
 
 .hidden {
   visibility: hidden;
 }
 
-#answers {
-  margin-left: 50px;
-  font-size: 30px;
+button.submitTest, button.next {
+  height: 60px;
+  letter-spacing: normal;
+  position: relative;
+  display: block;
 }
 
-.question p {
-  margin: 2px;
-  font-size: 50px;
+button.next {
+  margin: 10% 42% 0 38%;
 }
 
-input {
-  margin: 3px;
-}
-
-.next, .submitTest {
-  float: right;
+button.submitTest {
+  margin: 10% 42% 0 38%;
 }
 
 
@@ -388,10 +423,54 @@ input {
 
 
 
+.video:hover, .test:hover {
+  color: @green;
+}
 
-
-/*
-***********************
-* =bob
-***********************
-*/
+//
+//
+// #course {
+//   height: 60%;
+//   width: 50%;
+//   border: 5px solid white;
+//   border-radius: 10px;
+//   background-color: @green;
+//   margin: auto;
+//   overflow: auto;
+// }
+//
+// #courseNav {
+//   position: fixed;
+// }
+//
+// .video:hover, .test:hover {
+//   color: @green;
+// }
+//
+// .question {
+//   text-align: left;
+//   position: absolute;
+//   width: 799px;
+// }
+//
+// .hidden {
+//   visibility: hidden;
+// }
+//
+// #answers {
+//   margin-left: 50px;
+//   font-size: 30px;
+// }
+//
+// .question p {
+//   margin: 2px;
+//   font-size: 50px;
+// }
+//
+// input {
+//   margin: 3px;
+// }
+//
+// .next, .submitTest {
+//   float: right;
+// }
