@@ -11,8 +11,16 @@
     $('#createCourse').click(createCourse);
     $('#courses').on('click', 'form .add', addQuestion);
     $('#courses').on('submit', 'form', submitTest);
+    $('#courses').on('click', 'form .deleteQuestion', deleteQuestion);
   }
 
+
+  function deleteQuestion(e){
+    if($('#courses > form .questionField').length > 1){
+      $(this).parent().remove();
+    }
+    e.preventDefault();
+  }
 
   function submitTest(){
   }
