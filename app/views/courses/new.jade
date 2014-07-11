@@ -1,19 +1,26 @@
-extends ../shared/template
+form#courseCreate(action='/courses', method='post')
+  h1 New Course
 
-block content
+  input#title(input='text', name='title', autofocus=true, placeholder='course name')
 
-  form#courseCreate(action='/courses', method='post')
+  #studyMaterials
+    h1 Study Materials
+    input#video(input='url', name='videoURL' placeholder='Youtube URL')
 
-    h1 New Course
+    h2 Flashcards
+    button.addFlashcard Add A Flashcard
 
-    input#title(input='text', name='title', autofocus=true, placeholder='course name')
-    input#video(input='url', name='videoURL' placeholder='video url')
+    #flashcards
+      .flashcardField
+        textarea.sideA(name='sideA', placeholder='Side A')
+        textarea.sideB(name='sideB', placeholder='Side B')
+
+
+  #testCreate
+    h1 Questions & Answers
+    button.addQuestion Add A Question
 
     #questions
-
-      h1 Questions & Answers
-      button.add Add A Question
-
       .questionField
         input.questions(input='text', name='questions', placeholder='write your question here')
         input.answers1(input='text', name='correct', placeholder='correct answer')
@@ -23,4 +30,4 @@ block content
         button.deleteQuestion Remove Question
 
 
-    button#submitCourse Submit Test
+  button#submitCourse Create Course
