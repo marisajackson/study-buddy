@@ -15,7 +15,7 @@ exports.index = (req, res)=>{
       res.redirect('/students');
     }
     else {
-      res.redirect('/userTypenotteachernotstudent'); // if we go off the rails
+      res.redirect('/userTypenotteachernotstudent');
     }
   }
 };
@@ -50,4 +50,11 @@ console.log('logged out');
   req.session.userId = null;
   req.session.userType = null;
   res.redirect('/');
+};
+
+exports.lookup = (req, res, next)=>{
+  User.findByUserId(req.session.userId, u=>{
+    res.locals.user = u;
+    next();
+  });
 };

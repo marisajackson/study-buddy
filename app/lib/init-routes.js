@@ -19,6 +19,8 @@ function load(app, fn){
   var courses = traceur.require(__dirname + '/../routes/courses.js');
   var students = traceur.require(__dirname + '/../routes/students.js');
 
+  app.all('*', home.lookup);
+
   app.get('/', dbg, home.index);
   app.post('/login', dbg, home.login);
 

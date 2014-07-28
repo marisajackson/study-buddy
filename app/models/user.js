@@ -6,6 +6,7 @@ var Mongo = require('mongodb');
 
 class User {
   constructor(obj) {
+    this.name = obj.name;
     this.email = obj.email;
     this.password = obj.password;
     this.type = obj.loginType;

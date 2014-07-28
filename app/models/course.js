@@ -4,6 +4,7 @@
 var courses = global.nss.db.collection('courses');
 var Mongo = require('mongodb');
 var _ = require('lodash');
+var moment = require('moment');
 
 class Course {
   static create(userId, crsData, fn){
@@ -12,7 +13,7 @@ class Course {
       return { question:q, answers:answers[i] };
     });
     var c = new Course();
-    c.date = new Date();
+    c.date = moment().format('MMMM Do YYYY, h:mm:ss a');
     c.teacherId = Mongo.ObjectID(userId);
     c.title = crsData.title;
     c.videoURL = crsData.videoURL;

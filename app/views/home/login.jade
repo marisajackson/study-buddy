@@ -1,11 +1,12 @@
 extends ../shared/template
 
 block content
+  link(href='/less/override.css', rel='stylesheet')
   .testDivButton
     form#login(action='/login' method='POST')
       h4 User Name:
-      input.email(type='email' name='email' placeholder='Email' autofocus=true)
-      h4 Password:  
+      input.email(type='email' name='email' placeholder='Email')
+      h4 Password:
       input.password(type='password' name='password')
       input.login-type(type='hidden' name='loginType' value='#{loginType}')
       button#submitUser Submit
