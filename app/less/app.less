@@ -38,123 +38,6 @@ a {
   text-decoration: none;
 }
 
-/*
-***********************
-* =homepage
-***********************
-*/
-
-#home-container {
-  width: 75%;
-  background-color: @backgroundColorOp;
-  height: 103%;
-  margin: auto;
-  margin-top: -1%;
-  margin-bottom: -1%;
-  border: 5px solid white;
-  border-radius: 10px;
-  min-height: 600px;
-}
-
-#logoMain {
-  width: 100%;
-  height: 20%;
-  background-image: url('/img/sbl-02.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 10% 0 5% 0;
-}
-
-#description {
-  margin-top: 5%;
-}
-
-#home-page {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-}
-
-/*=============New User/Login Form===============*/
-
-form#login {
-  // text-align: left;
-  // margin: 0 27% 0 23%;
-  // padding-left: 20%;
-  margin: auto;
-}
-
-input.email,
-input.password,
-input.login-type {
-  display: block;
-  margin: auto;
-}
-
-button#submitUser {
-  height: 60px;
-  margin-top: 2%;
-  letter-spacing: normal;
-  // margin-left: 4%;
-}
-
-#login h4 {
-  margin-bottom: 0;
-}
-
-/*
-***********************
-* =nav
-***********************
-*/
-
-#navbar {
-  width: 100%;
-  height: 100px;
-  margin: 0;
-  background-color: @tertiary;
-  border-radius: 0 0 5px 5px;
-  font-size: 2em;
-  text-align: right;
-  line-height: 100px;
-}
-
-#navbar h1 {
-  display: inline-block;
-  // width: 30%;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: center;
-  font-size: smaller;
-}
-
-#logoNav {
-  width: 28%;
-  height: 100%;
-  background-image: url('/img/sbl-02.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
-  float: left;
-  display: inline-block;
-  // line-height: 100px;
-  // vertical-align: middle;
-}
-
-#welcome {
-  width: 44%;
-  text-align: center;
-}
-
-#logout {
-  width: 28%;
-}
-
-#logout, #welcome {
-  display: inline-block;
-}
-
 a.logout, a.logout:visited {
   margin: 5% 2% 0 0;
   position: relative;
@@ -174,29 +57,9 @@ a:hover {
   color: @pink;
 }
 
-/*
-***********************
-* =studentNav
-***********************
-*/
-
-nav#courseNav {
-  width: 15%;
-  float: left;
-  left: -15px;
-  background-color: green;
-  text-align: left;
-  padding: 0 0 0 2%;
-  border: 5px solid white;
-  border-radius: 10px;
+input {
+  color: black;
 }
-
-#courseLogo {
-  width: 30%;
-  height: 15%;
-  text-align: center;
-}
-
 
 /*
 ***********************
@@ -247,84 +110,113 @@ button:active {
   width: 300px;
 }
 
-/*=============Divs===============*/
 
-#testDivButton {
+/*
+***********************
+* =homepage
+***********************
+*/
+
+#home-container {
+  width: 75%;
+  background-color: @backgroundColorOp;
+  height: 103%;
+  margin: auto;
+  margin-top: -1%;
+  margin-bottom: -1%;
+  border: 5px solid white;
+  border-radius: 10px;
+  min-height: 600px;
+}
+
+#logo-main {
+  width: 100%;
+  height: 20%;
+  background-image: url('/img/sbl-02.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10% 0 5% 0;
+}
+
+#description {
+  margin-top: 5%;
+}
+
+/*
+***********************
+* =login
+***********************
+*/
+
+form#login {
+  margin: auto;
+}
+
+input.email,
+input.password,
+input.login-type {
+  display: block;
+  margin: auto;
+}
+
+button#submitUser {
+  height: 60px;
+  margin-top: 2%;
+  letter-spacing: normal;
+}
+
+#login h4 {
+  margin-bottom: 0;
+}
+
+/*
+***********************
+* =nav
+***********************
+*/
+
+#navbar {
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  background-color: @tertiary;
+  border-radius: 0 0 5px 5px;
+  font-size: 2em;
+  text-align: right;
+  line-height: 100px;
+}
+
+#navbar h1 {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: smaller;
+}
+
+#logoNav {
+  width: 28%;
+  height: 100%;
+  background-image: url('/img/sbl-02.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  float: left;
+  display: inline-block;
+}
+
+#welcome {
+  width: 44%;
   text-align: center;
 }
 
-#testDiv {
-  width: 90%;
-  height: 400px;
-  position: relative;
-  display: block;
-  background-color: @tertiary;
-  margin: 5%;
-  padding: 2% 0 0 0;
-  // border: 5px solid white;
-  border-radius: 10px;
-  font-size: 1.5em;
+#logout {
+  width: 28%;
 }
 
-#innerTestDiv1 {
-  width: 50%;
-  height: 20%;
-  position: relative;
-  float: left;
-  left: 40%;
-  top: -20%;
-  margin: 0;
-  background-color: @green;
-  color: white;
-  border-radius: 10px;
-}
-
-p {
-  margin: 5%;
-}
-
-input {
-  color: black;
-}
-
-#teacherDiv, #studentDiv {
-  width: 100%;
-  margin: 0;
-}
-
-/*=============Student Courses Table===============*/
-
-table.course {
-  width: 35%;
-  border: 5px solid white;
-  border-radius: 10px;
-  background-color: @greenOp;
-  text-align: left;
-  margin: 5% 30%;
-  padding-left: 5%;
-  border-collapse: collapse;
-  font-size: 2em;
-}
-
-tr {
-  border: 5px solid white;
-  line-height: 80px;
-}
-
-td:nth-child(odd) {
-  text-align: left;
-  padding-left: 2%;
-}
-
-td:nth-child(even) {
-  text-align: right;
-  padding-right: 2%;
-}
-
-
-#studentDiv {
-  height: 65%;
-  overflow: auto;
+#logout, #welcome {
+  display: inline-block;
 }
 
 
@@ -377,10 +269,6 @@ button#submit-course {
   margin: 2% 0 2% 0;
 }
 
-textarea {
-  margin: 3px;
-}
-
 .question-field {
   margin-bottom: 20px;
   width: 50%;
@@ -407,9 +295,14 @@ button.delete-question, button.delete-flashcard {
 
 textarea.sideA, textarea.sideB {
   margin: 0;
+  color: black;
 }
 
-/*=============Past Courses===============*/
+/*
+***********************
+* =pastCourses
+***********************
+*/
 
 #past-courses {
   width: 100%;
@@ -447,28 +340,80 @@ textarea.sideA, textarea.sideB {
 
 /*
 ***********************
-* =marisa
+* =studentcourse
 ***********************
 */
 
-/*=============Course===============*/
+nav#course-nav {
+  width: 15%;
+  float: left;
+  left: -15px;
+  background-color: green;
+  text-align: left;
+  padding: 0 0 0 2%;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.video:hover, .test:hover {
+  color: @green;
+}
+
+/*=============Student Courses Table===============*/
+
+table.course {
+  width: 40%;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: @greenOp;
+  text-align: left;
+  margin: 5% auto;
+  border-collapse: collapse;
+  font-size: 2em;
+}
+
+tr {
+  border: 5px solid white;
+  line-height: 80px;
+}
+
+td:nth-child(odd) {
+  text-align: left;
+  padding-left: 2%;
+}
+
+td:nth-child(even) {
+  text-align: right;
+  padding-right: 2%;
+}
+
+h2.course {
+  margin: 0.3% 0;
+}
 
 #course {
   height: 70%;
   width: 50%;
+  min-height: 450px;
   border: 5px solid white;
   border-radius: 10px;
-  margin: auto;
+  margin: 5% auto;
   padding: 0;
   overflow: auto;
 }
 
-#courseNav {
+#course-nav {
   position: fixed;
+  margin-top: 5%;
+}
+
+.fail {
+  color: red;
 }
 
 
 /*=============Test===============*/
+
 h1.testTitle {
   background-color: @green;
   margin: 0;
@@ -488,12 +433,11 @@ form#test {
   text-align: left;
   position: absolute;
   margin-left: 2%;
-
-  // height: 10%;
 }
 
 .question h2 {
   font-size: 2em;
+  margin-bottom: 0;
 }
 
 #answers {
@@ -525,73 +469,9 @@ button.submitTest, button.next {
 }
 
 button.next {
-  margin: 10% 42% 0 38%;
+  margin: 5% auto;
 }
 
 button.submitTest {
-  margin: 10% 42% 0 38%;
+  margin: 5% auto;
 }
-
-h1 {
-  margin-bottom: 0px;
-}
-
-h3 {
-  margin-top: 0px;
-}
-
-
-
-
-
-.video:hover, .test:hover {
-  color: @green;
-}
-
-//
-//
-// #course {
-//   height: 60%;
-//   width: 50%;
-//   border: 5px solid white;
-//   border-radius: 10px;
-//   background-color: @green;
-//   margin: auto;
-//   overflow: auto;
-// }
-//
-// #courseNav {
-//   position: fixed;
-// }
-//
-// .video:hover, .test:hover {
-//   color: @green;
-// }
-//
-// .question {
-//   text-align: left;
-//   position: absolute;
-//   width: 799px;
-// }
-//
-// .hidden {
-//   visibility: hidden;
-// }
-//
-// #answers {
-//   margin-left: 50px;
-//   font-size: 30px;
-// }
-//
-// .question p {
-//   margin: 2px;
-//   font-size: 50px;
-// }
-//
-// input {
-//   margin: 3px;
-// }
-//
-// .next, .submitTest {
-//   float: right;
-// }

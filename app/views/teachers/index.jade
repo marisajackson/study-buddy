@@ -5,9 +5,8 @@ block content
   //- h1 Welcome Teacher
   //- h3 email
 
-  #teacherDiv
-    #courses
-      button.teacher#create-course Create a Course
+  #courses
+    button.teacher#create-course Create a Course
 
   #past-courses
     h1 Previously Created Courses
@@ -23,10 +22,6 @@ block content
           p #{numEnroll.length} enrolled, #{100*(numPassed/numEnroll.length).toFixed(1)}% passed
         else
           p 0 enrolled
-
-
-
-
 
 
 block scripts

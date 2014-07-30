@@ -8,6 +8,9 @@ var moment = require('moment');
 
 class Course {
   static create(userId, crsData, fn){
+    var flashcards = crsData.sideA.map((q, i)=>{
+      return {sideA: crsData.sideA[i], sideB: crsData.sideB[i]};
+    });
     var answers = _.zip(crsData.correct, crsData.wrong1, crsData.wrong2, crsData.wrong3);
     var test = crsData.questions.map((q,i)=>{
       return { question:q, answers:answers[i] };
@@ -19,6 +22,7 @@ class Course {
     c.videoURL = crsData.videoURL;
     c.test = test;
     c.students = {};
+    c.flashcards = flashcards;
     c.save(()=>{
       fn();
     });

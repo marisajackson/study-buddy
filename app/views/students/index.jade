@@ -3,19 +3,17 @@ extends ../shared/template
 block content
   include ../shared/navbar
 
-  h1 Welcome Student
+  //- #studentDiv
 
-  #studentDiv
-
-    table.course
-      tbody
-      each course in courses
-        tr
-          td
-            a(href='/courses/#{course._id.toString()}') #{course.title}
-          td
-            - var score = course.students[userId];
-            -if(typeof(score) !== 'undefined' && score !== null)
-              span(class=(score<70)?'fail':'pass')  #{score.toFixed(2)} %
-            -else
-              span Not taken
+  table.course
+    tbody
+    each course in courses
+      tr
+        td
+          a(href='/courses/#{course._id.toString()}') #{course.title}
+        td
+          - var score = course.students[userId];
+          -if(typeof(score) !== 'undefined' && score !== null)
+            span(class=(score<70)?'fail':'pass')  #{score.toFixed(2)} %
+          -else
+            span Not taken
