@@ -34,6 +34,28 @@ body {
   background-attachment: fixed;
 }
 
+a {
+  text-decoration: none;
+}
+
+/*
+***********************
+* =homepage
+***********************
+*/
+
+#home-container {
+  width: 75%;
+  background-color: @backgroundColorOp;
+  height: 103%;
+  margin: auto;
+  margin-top: -1%;
+  margin-bottom: -1%;
+  border: 5px solid white;
+  border-radius: 10px;
+  min-height: 600px;
+}
+
 #logoMain {
   width: 100%;
   height: 20%;
@@ -52,6 +74,33 @@ body {
   width: 100%;
   height: 100%;
   background-color: black;
+}
+
+/*=============New User/Login Form===============*/
+
+form#login {
+  // text-align: left;
+  // margin: 0 27% 0 23%;
+  // padding-left: 20%;
+  margin: auto;
+}
+
+input.email,
+input.password,
+input.login-type {
+  display: block;
+  margin: auto;
+}
+
+button#submitUser {
+  height: 60px;
+  margin-top: 2%;
+  letter-spacing: normal;
+  // margin-left: 4%;
+}
+
+#login h4 {
+  margin-bottom: 0;
 }
 
 /*
@@ -93,10 +142,6 @@ body {
   // vertical-align: middle;
 }
 
-a {
-  text-decoration: none;
-}
-
 #welcome {
   width: 44%;
   text-align: center;
@@ -107,17 +152,8 @@ a {
 }
 
 #logout, #welcome {
-  // width: 30%;
   display: inline-block;
 }
-
-// #welcome {
-//   float: left;
-// }
-//
-// #logout {
-//   float: right;
-// }
 
 a.logout, a.logout:visited {
   margin: 5% 2% 0 0;
@@ -206,10 +242,11 @@ button:active {
   transition: none;
 }
 
-#createCourse {
+#create-course {
   letter-spacing: normal;
   width: 300px;
 }
+
 /*=============Divs===============*/
 
 #testDivButton {
@@ -290,28 +327,6 @@ td:nth-child(even) {
   overflow: auto;
 }
 
-/*=============New User/Login Form===============*/
-
-form#login {
-  width: 50%;
-  text-align: left;
-  margin: 0 27% 0 23%;
-  padding-left: 20%;
-}
-
-input.email,
-input.password,
-input.login-type {
-  display: block;
-  margin: 0;
-}
-
-button#submitUser {
-  height: 60px;
-  margin-top: 2%;
-  letter-spacing: normal;
-  margin-left: 4%;
-}
 
 /*
 ***********************
@@ -323,7 +338,7 @@ button#submitUser {
   margin: auto;
 }
 
-form#courseCreate {
+form#course-create {
   width: 45%;
   border: 5px solid white;
   border-radius: 10px;
@@ -332,7 +347,7 @@ form#courseCreate {
   margin: auto;
 }
 
-button.addQuestion, button.addFlashcard {
+button.add-question, button.add-flashcard {
   letter-spacing: normal;
   width: 300px;
   height: 60px;
@@ -340,23 +355,23 @@ button.addQuestion, button.addFlashcard {
   margin-bottom: 2%;
 }
 
-#testCreate {
+#test-create {
   text-align: center;
 }
 
-#courseCreate h1 {
+#course-create h1 {
   margin: 1px;
   text-align: center;
   text-decoration: underline;
 }
 
-#courseCreate h2 {
+#course-create h2, #course-create h3 {
   margin: 1px;
   margin-bottom: 0;
   text-decoration: underline;
 }
 
-button#submitCourse {
+button#submit-course {
   height: 60px;
   letter-spacing: normal;
   margin: 2% 0 2% 0;
@@ -366,15 +381,10 @@ textarea {
   margin: 3px;
 }
 
-.questionField {
+.question-field {
   margin-bottom: 20px;
   width: 50%;
   display: inline-block;
-}
-
-input#title,
-input#video {
-  margin: 0 2% 0 0;
 }
 
 input.questions,
@@ -386,37 +396,52 @@ input.answers4 {
   margin: auto;
 }
 
-button.deleteQuestion {
+button.delete-question, button.delete-flashcard {
   height: 30px;
   font-size: 0.8em;
   letter-spacing: normal;
   padding: 2px;
-  margin: 1% 0 2% 0;
+  margin-bottom: 2%;
+  margin-top: 0;
+}
+
+textarea.sideA, textarea.sideB {
+  margin: 0;
 }
 
 /*=============Past Courses===============*/
 
-#pastCourses {
+#past-courses {
   width: 100%;
-  height: 40%;
   background-color: @tertiary;
-  margin: 0;
 }
 
-.pastCourse {
-  width: 20%;
+.past-course {
+  width: 19%;
   text-align: left;
   position: relative;
   float: left;
-  padding: 1% 2% 2% 2%;
-  margin: 2%;
-  background-color: @green;
-
+  margin: .35%;
+  background-color: #00b945;
+  border: 2px solid @backgroundColorOp;
 }
 
-h3.courseTitle {
+.past-course h3 {
   width: 100%;
-  text-decoration: underline;
+  font-size: 26px;
+  background-color: @backgroundColorOp;
+  margin: 0;
+}
+
+.past-course h4 {
+  margin: 2%;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.past-course p {
+  margin: 0;
+  margin-left: 10%;
 }
 
 

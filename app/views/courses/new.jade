@@ -1,33 +1,36 @@
-form#courseCreate(action='/courses', method='post')
+form#course-create(action='/courses', method='post')
   h1 New Course
 
-  input#title(input='text', name='title', autofocus=true, placeholder='course name')
+  input#title(input='text', name='title', autofocus=true, placeholder='Course Title')
 
-  #studyMaterials
-    h1 Study Materials
+  #study-materials
+    h2 Study Materials
+
+    h3 Video
     input#video(input='url', name='videoURL' placeholder='Youtube URL')
 
-    h2 Flashcards
-    button.addFlashcard Add A Flashcard
+    h3.flashcard-header Flashcards
 
     #flashcards
-      .flashcardField
+      .flashcard-field
         textarea.sideA(name='sideA', placeholder='Side A')
         textarea.sideB(name='sideB', placeholder='Side B')
+        button.delete-flashcard Remove Flashcard
 
+    button.add-flashcard Add A Flashcard
 
-  #testCreate
-    h1 Questions & Answers
-    button.addQuestion Add A Question
+  #test-create
+    h2 Questions & Answers
+    button.add-question Add A Question
 
     #questions
-      .questionField
-        input.questions(input='text', name='questions', placeholder='write your question here')
-        input.answers1(input='text', name='correct', placeholder='correct answer')
-        input.answers2(input='text', name='wrong1', placeholder='wrong answer')
-        input.answers3(input='text', name='wrong2', placeholder='wrong answer')
-        input.answers4(input='text', name='wrong3', placeholder='wrong answer')
-        button.deleteQuestion Remove Question
+      .question-field
+        input.questions(input='text', name='questions', placeholder='Question')
+        input.answers1(input='text', name='correct', placeholder='Correct Answer')
+        input.answers2(input='text', name='wrong1', placeholder='Wrong Answer')
+        input.answers3(input='text', name='wrong2', placeholder='Wrong Answer')
+        input.answers4(input='text', name='wrong3', placeholder='Wrong Answer')
+        button.delete-question Remove Question
 
 
-  button#submitCourse Create Course
+  button#submit-course Create Course

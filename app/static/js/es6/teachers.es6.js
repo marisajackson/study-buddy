@@ -8,22 +8,30 @@
   $(document).ready(init);
 
   function init(){
-    $('#courses').on('click', '#createCourse', createCourse);
-    $('#courses').on('click', 'form .addQuestion', addQuestion);
-    $('#courses').on('click', 'form .addFlashcard', addFlashcard);
+    $('#courses').on('click', '#create-course', createCourse);
+    $('#courses').on('click', 'form .add-question', addQuestion);
+    $('#courses').on('click', 'form .add-flashcard', addFlashcard);
     $('#courses').on('submit', 'form', submitTest);
-    $('#courses').on('click', 'form .deleteQuestion', deleteQuestion);
+    $('#courses').on('click', 'form .delete-question', deleteQuestion);
+    $('#courses').on('click', 'form .delete-flashcard', deleteFlashcard);
   }
 
   function addFlashcard(e){
-    var flashcard = $('#courses > form .flashcardField:last-child');
+    var flashcard = $('#courses > form .flashcard-field:last-child');
     $('#flashcards').append(flashcard.clone());
     $('#flashcards div:last-child input').each((a,b)=>$(b).val(''));
     e.preventDefault();
   }
 
+  function deleteFlashcard(e){
+    if($('#courses > form .flashcard-field').length > 1){
+      $(this).parent().remove();
+    }
+    e.preventDefault();
+  }
+
   function deleteQuestion(e){
-    if($('#courses > form .questionField').length > 1){
+    if($('#courses > form .question-field').length > 1){
       $(this).parent().remove();
     }
     e.preventDefault();
@@ -33,7 +41,7 @@
   }
 
   function addQuestion(e){
-    var question = $('#courses > form .questionField:last-child');
+    var question = $('#courses > form .question-field:last-child');
     console.log(question);
     $('#questions').append(question.clone());
     $('#questions div:last-child input').each((a,b)=>$(b).val(''));
