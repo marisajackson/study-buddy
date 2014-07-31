@@ -28,6 +28,12 @@ class Course {
     });
   }
 
+  static removeRecord(courseId, fn){
+    courseId = Mongo.ObjectID(courseId);
+    courses.remove({_id: courseId}, ()=>{
+      fn();
+    });
+  }
 
   static findAllByTeacherId(userId, fn){
     userId = Mongo.ObjectID(userId);

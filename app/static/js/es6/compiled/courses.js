@@ -3,6 +3,7 @@
   $(document).ready(init);
   function init() {
     $('.video').click(video);
+    $('.flashcards').click(flashcards);
     $('.test').click(test);
     $('#course').on('click', '.next', next);
   }
@@ -17,6 +18,12 @@
       $(this).parent().next('.hidden').addClass('expandUp');
     }
     e.preventDefault();
+  }
+  function flashcards() {
+    var courseId = $('.course').attr('data-id');
+    ajax(("/courses/" + courseId + "/flashcards"), 'get', null, (function(html) {
+      $('#course').empty().append(html);
+    }));
   }
   function video() {
     var courseId = $('.course').attr('data-id');

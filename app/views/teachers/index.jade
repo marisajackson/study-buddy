@@ -22,6 +22,7 @@ block content
           p #{numEnroll.length} enrolled, #{100*(numPassed/numEnroll.length).toFixed(1)}% passed
         else
           p 0 enrolled
+        button(data-id=course._id.toString()).delete-course
 
 
 block scripts

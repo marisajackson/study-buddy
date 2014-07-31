@@ -35,8 +35,10 @@ function load(app, fn){
   app.get('/courses/new', dbg, courses.new);
   app.get('/courses/:courseId', dbg, courses.show);
   app.get('/courses/:courseId/video', dbg, courses.video);
+  app.get('/courses/:courseId/flashcards', dbg, courses.flashcards);
   app.get('/courses/:courseId/test', dbg, courses.test);
   app.put('/courses/:courseId/test', dbg, courses.grade);
+  app.delete('/courses/:courseId', dbg, courses.destroy);
 
   console.log('Routes Loaded');
   fn();

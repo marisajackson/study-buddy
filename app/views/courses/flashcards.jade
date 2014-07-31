@@ -1,0 +1,8 @@
+h1.testTitle Flashcards
+
+#flashcards
+  each card in course.flashcards
+    - var count = 1
+    div.question.hidden(class='question#{count++}')
+      h2= card.sideA
+      button.next-flashcard Next

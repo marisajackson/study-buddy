@@ -8,6 +8,13 @@
     $('#courses').on('submit', 'form', submitTest);
     $('#courses').on('click', 'form .delete-question', deleteQuestion);
     $('#courses').on('click', 'form .delete-flashcard', deleteFlashcard);
+    $('#past-courses').on('click', '.delete-course', deleteCourse);
+  }
+  function deleteCourse() {
+    var courseId = $(this).attr('data-id');
+    ajax(("/courses/" + courseId), 'DELETE', null, (function(html) {
+      $('#past-courses').empty().append(html);
+    }));
   }
   function addFlashcard(e) {
     var flashcard = $('#courses > form .flashcard-field:last-child');
@@ -32,7 +39,6 @@
   function submitTest() {}
   function addQuestion(e) {
     var question = $('#courses > form .question-field:last-child');
-    console.log(question);
     $('#questions').append(question.clone());
     $('#questions div:last-child input').each((function(a, b) {
       return $(b).val('');
