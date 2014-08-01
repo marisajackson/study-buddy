@@ -367,8 +367,12 @@ nav#course-nav {
   border-radius: 10px;
 }
 
-.video:hover, .test:hover {
+.video:hover, .test:hover, .flashcards:hover {
   color: @green;
+}
+
+#flashcards {
+  height: 100%;
 }
 
 /*=============Student Courses Table===============*/
@@ -486,4 +490,51 @@ button.next {
 
 button.submitTest {
   margin: 5% auto;
+}
+
+/*=============Flashcards==============*/
+
+.container {
+  width: 49%;
+  height: 50%;
+  position: relative;
+  perspective: 100;
+  color: black;
+  margin: auto;
+  position: absolute;
+}
+
+.card, .front, .back {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 4px solid black;
+  line-height: 9;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition-duration: .5s;
+  transform-origin: center center;
+}
+
+.front, .back {
+  display: block;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.front {
+  z-index: 3;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.rotate, .match {
+  transform: rotateY(180deg);
 }
