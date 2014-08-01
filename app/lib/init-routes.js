@@ -19,6 +19,8 @@ function load(app, fn){
   var courses = traceur.require(__dirname + '/../routes/courses.js');
   var students = traceur.require(__dirname + '/../routes/students.js');
 
+  app.all('*', home.lookup);
+
   app.get('/', dbg, home.index);
   app.post('/login', dbg, home.login);
 
@@ -33,8 +35,10 @@ function load(app, fn){
   app.get('/courses/new', dbg, courses.new);
   app.get('/courses/:courseId', dbg, courses.show);
   app.get('/courses/:courseId/video', dbg, courses.video);
+  app.get('/courses/:courseId/flashcards', dbg, courses.flashcards);
   app.get('/courses/:courseId/test', dbg, courses.test);
   app.put('/courses/:courseId/test', dbg, courses.grade);
+  app.delete('/courses/:courseId', dbg, courses.destroy);
 
   console.log('Routes Loaded');
   fn();

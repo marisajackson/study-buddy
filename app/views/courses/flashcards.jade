@@ -1,0 +1,10 @@
+#flashcards
+  - var count = 1
+  each card in course.flashcards
+    .container.hidden(class='flashcard#{count++}')
+      .card
+        .front
+          h1= card.sideA
+        .back
+          h1= card.sideB
+      button.next-flashcard Next

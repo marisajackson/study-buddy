@@ -1,3 +1,6 @@
 #navbar
   a#logoNav(href='/')
-  a.logout(href='/logout') Logout
+  #welcome
+    h1 Welcome #{user.email}
+  #logout
+    a.logout(href='/logout') Logout

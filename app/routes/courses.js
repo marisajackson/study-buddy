@@ -26,6 +26,16 @@ exports.video = (req, res)=>{
   });
 };
 
+exports.flashcards = (req, res)=>{
+  Course.findByCourseId(req.params.courseId, course=>{
+
+    console.log('===================');
+    console.log(course);
+
+    res.render('courses/flashcards', {course: course});
+  });
+};
+
 exports.test = (req, res)=>{
   Course.findByCourseId(req.params.courseId, course=>{
     course.answerScramble();
@@ -39,6 +49,14 @@ exports.grade = (req, res)=>{
     console.log(course);
     course.save(()=>{
       res.redirect('/students');
+    });
+  });
+};
+
+exports.destroy = (req, res)=>{
+  Course.removeRecord(req.params.courseId, ()=>{
+    Course.findAllByTeacherId(req.session.userId, courses=>{
+      res.render('teachers/courses', {courses:courses, title: 'Welcome Teacher'});
     });
   });
 };

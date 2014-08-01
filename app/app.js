@@ -34,9 +34,9 @@ server.listen(port, function(){
   console.log('Node server listening. Port: ' + port + ', Database: ' + dbname);
 });
 
-/* --- socket.io        */
-var sockets = traceur.require(__dirname + '/lib/sockets.js');
-var io = require('socket.io').listen(server, {log:true, 'log level':2});
-io.of('/app').on('connection', sockets.connection);
+// /* --- socket.io        */
+// var sockets = traceur.require(__dirname + '/lib/sockets.js');
+// var io = require('socket.io').listen(server, {log:true, 'log level':2});
+// io.of('/app').on('connection', sockets.connection);
 
 module.exports = app;

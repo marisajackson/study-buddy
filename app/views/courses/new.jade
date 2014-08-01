@@ -1,26 +1,36 @@
-extends ../shared/template
+form#course-create(action='/courses', method='post')
+  h1 New Course
 
-block content
+  input#title(input='text', name='title', autofocus=true, placeholder='Course Title')
 
-  form#courseCreate(action='/courses', method='post')
+  #study-materials
+    h2 Study Materials
 
-    h1 New Course
+    h3 Video
+    input#video(input='url', name='videoURL' placeholder='Youtube URL')
 
-    input#title(input='text', name='title', autofocus=true, placeholder='course name')
-    input#video(input='url', name='videoURL' placeholder='video url')
+    h3.flashcard-header Flashcards
+
+    #flashcards
+      .flashcard-field
+        textarea.sideA(name='sideA', placeholder='Side A')
+        textarea.sideB(name='sideB', placeholder='Side B')
+        button.delete-flashcard Remove Flashcard
+
+    button.add-flashcard Add A Flashcard
+
+  #test-create
+    h2 Questions & Answers
+    button.add-question Add A Question
 
     #questions
-
-      h1 Questions & Answers
-      button.add Add A Question
-
-      .questionField
-        input.questions(input='text', name='questions', placeholder='write your question here')
-        input.answers1(input='text', name='correct', placeholder='correct answer')
-        input.answers2(input='text', name='wrong1', placeholder='wrong answer')
-        input.answers3(input='text', name='wrong2', placeholder='wrong answer')
-        input.answers4(input='text', name='wrong3', placeholder='wrong answer')
-        button.deleteQuestion Remove Question
+      .question-field
+        input.questions(input='text', name='questions', placeholder='Question')
+        input.answers1(input='text', name='correct', placeholder='Correct Answer')
+        input.answers2(input='text', name='wrong1', placeholder='Wrong Answer')
+        input.answers3(input='text', name='wrong2', placeholder='Wrong Answer')
+        input.answers4(input='text', name='wrong3', placeholder='Wrong Answer')
+        button.delete-question Remove Question
 
 
-    button#submitCourse Submit Test
+  button#submit-course Create Course

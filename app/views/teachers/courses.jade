@@ -1,0 +1,14 @@
+h1 Previously Created Courses
+each course in courses
+  .past-course
+    h3= course.title
+    h4 Date Created:
+    p= course.date
+    h4 Enrolled Students:
+    - var numEnroll = Object.keys(course.students)
+    - var numPassed = numEnroll.filter(function(s){ return (course.students[s]) >= 70;}).length
+    if(numEnroll.length)
+      p #{numEnroll.length} enrolled, #{100*(numPassed/numEnroll.length).toFixed(1)}% passed
+    else
+      p 0 enrolled
+    button(data-id=course._id.toString()).delete-course

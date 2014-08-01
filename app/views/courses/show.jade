@@ -3,12 +3,14 @@ extends ../shared/template
 block content
   include ../shared/navbar
 
-  h1.course(data-id=course._id.toString())= course.title
+  //- h1.course(data-id=course._id.toString())= course.title
 
-  nav#courseNav
+  nav#course-nav
+    h1.course(data-id=course._id.toString())= course.title
     h4 Study Materials
       ul
         li.video Video
+        li.flashcards Flashcards
 
     h4.test Test
 

@@ -13,7 +13,7 @@
 
 /*
 ***********************
-* =alexMASTER
+* =general
 ***********************
 */
 
@@ -22,36 +22,16 @@ html, body {
   height: 100%;
   margin: auto 0;
   font-family: 'Ek Mukta', sans-serif;
-  background-color: @backgroundColor;
+  // background-color: @backgroundColor;
   color: white;
   text-align: center;
 }
 
-#logoMain {
-  width: 100%;
-  height: 20%;
-  background-image: url('/img/sbl-02.svg');
-  background-size: contain;
+body {
+  background-image: url('/img/classroomColors.jpeg');
   background-repeat: no-repeat;
-  background-position: center;
-  margin: 10% 0 5% 0;
-}
-
-#description {
-  margin-top: 5%;
-}
-
-/*=============Navbar===============*/
-
-#navbar {
-  width: 96%;
-  height: 5%;
-  margin: 0;
-  background-color: @tertiary;
-  border-radius: 0 0 5px 5px;
-  font-size: 2em;
-  text-align: right;
-  padding: 2%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 a {
@@ -59,7 +39,6 @@ a {
 }
 
 a.logout, a.logout:visited {
-  width: 10%;
   margin: 5% 2% 0 0;
   position: relative;
   text-decoration: underline;
@@ -78,39 +57,15 @@ a:hover {
   color: @pink;
 }
 
-#logoNav {
-  width: 80%;
-  height: 100%;
-  background-image: url('/img/sbl-02.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
-  float: left;
-  display: inline-block;
-
+input {
+  color: black;
 }
 
-/*=============Student Nav===============*/
-
-nav#courseNav {
-  width: 15%;
-  float: left;
-  left: -15px;
-  background-color: green;
-  text-align: left;
-  padding: 0 0 0 2%;
-  border: 5px solid white;
-  border-radius: 10px;
-}
-
-#courseLogo {
-  width: 60%;
-  height: 15%;
-  text-align: center;
-}
-
-
-/*=============Buttons===============*/
+/*
+***********************
+* =buttons
+***********************
+*/
 
 
 button {
@@ -150,68 +105,285 @@ button:active {
   transition: none;
 }
 
-#createCourse {
+#create-course {
   letter-spacing: normal;
   width: 300px;
 }
-/*=============Divs===============*/
 
-#testDivButton {
+button.delete-course {
+  background-color: rgba(26, 27, 27, 0);
+  background-image: url('/img/delete.png');
+  float: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  width: 75px;
+  height: 75px;
+  margin: 0;
+}
+
+
+/*
+***********************
+* =homepage
+***********************
+*/
+
+#home-container {
+  width: 75%;
+  background-color: @backgroundColorOp;
+  height: 103%;
+  margin: auto;
+  margin-top: -1%;
+  margin-bottom: -1%;
+  border: 5px solid white;
+  border-radius: 10px;
+  min-height: 600px;
+}
+
+#logo-main {
+  width: 100%;
+  height: 20%;
+  background-image: url('/img/sbl-02.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10% 0 5% 0;
+}
+
+#description {
+  margin-top: 5%;
+}
+
+/*
+***********************
+* =login
+***********************
+*/
+
+form#login {
+  margin: auto;
+}
+
+input.email,
+input.password,
+input.login-type {
+  display: block;
+  margin: auto;
+}
+
+button#submitUser {
+  height: 60px;
+  margin-top: 2%;
+  letter-spacing: normal;
+}
+
+#login h4 {
+  margin-bottom: 0;
+}
+
+/*
+***********************
+* =nav
+***********************
+*/
+
+#navbar {
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  background-color: @tertiary;
+  border-radius: 0 0 5px 5px;
+  font-size: 2em;
+  text-align: right;
+  line-height: 100px;
+}
+
+#navbar h1 {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: smaller;
+}
+
+#logoNav {
+  width: 28%;
+  height: 100%;
+  background-image: url('/img/sbl-02.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  float: left;
+  display: inline-block;
+}
+
+#welcome {
+  width: 44%;
   text-align: center;
 }
 
-#testDiv {
-  width: 90%;
-  height: 400px;
-  position: relative;
-  display: block;
-  background-color: @tertiary;
-  margin: 5%;
-  padding: 2% 0 0 0;
-  // border: 5px solid white;
-  border-radius: 10px;
-  font-size: 1.5em;
+#logout {
+  width: 28%;
 }
 
-#innerTestDiv1 {
+#logout, #welcome {
+  display: inline-block;
+}
+
+
+/*
+***********************
+* =createCourse
+***********************
+*/
+
+#courses {
+  margin: auto;
+}
+
+form#course-create {
+  width: 45%;
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: @blueOp;
+  text-align: center;
+  margin: auto;
+}
+
+button.add-question, button.add-flashcard {
+  letter-spacing: normal;
+  width: 300px;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 2%;
+}
+
+#test-create {
+  text-align: center;
+}
+
+#course-create h1 {
+  margin: 1px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#course-create h2, #course-create h3 {
+  margin: 1px;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+
+button#submit-course {
+  height: 60px;
+  letter-spacing: normal;
+  margin: 2% 0 2% 0;
+}
+
+.question-field {
+  margin-bottom: 20px;
   width: 50%;
-  height: 20%;
-  position: relative;
-  float: left;
-  left: 40%;
-  top: -20%;
+  display: inline-block;
+}
+
+input.questions,
+input.answers1,
+input.answers2,
+input.answers3,
+input.answers4 {
+  display: block;
+  margin: auto;
+}
+
+button.delete-question, button.delete-flashcard {
+  height: 30px;
+  font-size: 0.8em;
+  letter-spacing: normal;
+  padding: 2px;
+  margin-bottom: 2%;
+  margin-top: 0;
+}
+
+textarea.sideA, textarea.sideB {
   margin: 0;
-  background-color: @green;
-  color: white;
-  border-radius: 10px;
-}
-
-p {
-  margin: 5%;
-}
-
-input {
   color: black;
 }
 
-#teacherDiv, #studentDiv {
+/*
+***********************
+* =pastCourses
+***********************
+*/
+
+#past-courses {
   width: 100%;
-  background-image: url('/img/classroomColors.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: @tertiary;
+}
+
+.past-course {
+  width: 19%;
+  text-align: left;
+  position: relative;
+  float: left;
+  margin: .35%;
+  background-color: #00b945;
+  border: 2px solid @backgroundColorOp;
+}
+
+.past-course h3 {
+  width: 100%;
+  font-size: 26px;
+  background-color: @backgroundColorOp;
   margin: 0;
+}
+
+.past-course h4 {
+  margin: 2%;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.past-course p {
+  margin: 0;
+  margin-left: 10%;
+}
+
+
+/*
+***********************
+* =studentcourse
+***********************
+*/
+
+nav#course-nav {
+  width: 15%;
+  float: left;
+  left: -15px;
+  background-color: green;
+  text-align: left;
+  padding: 0 0 0 2%;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.video:hover, .test:hover, .flashcards:hover {
+  color: @green;
+}
+
+#flashcards {
+  height: 100%;
 }
 
 /*=============Student Courses Table===============*/
 
 table.course {
-  width: 35%;
+  width: 40%;
   border: 5px solid white;
   border-radius: 10px;
   background-color: @greenOp;
   text-align: left;
-  margin: 5% 30%;
-  padding-left: 5%;
+  margin: 5% auto;
   border-collapse: collapse;
   font-size: 2em;
 }
@@ -231,142 +403,33 @@ td:nth-child(even) {
   padding-right: 2%;
 }
 
-
-#studentDiv {
-  height: 65%;
-  overflow: auto;
+h2.course {
+  margin: 0.3% 0;
 }
-
-/*=============New User/Login Form===============*/
-
-form#login {
-  width: 50%;
-  text-align: left;
-  margin: 0 27% 0 23%;
-  padding-left: 20%;
-}
-
-input.email,
-input.password,
-input.login-type {
-  display: block;
-  margin: 0;
-}
-
-button#submitUser {
-  height: 60px;
-  margin-top: 2%;
-  letter-spacing: normal;
-  margin-left: 4%;
-}
-
-/*=============New Course Form===============*/
-
-
-
-form#courseCreate {
-  width: 45%;
-  border: 5px solid white;
-  border-radius: 10px;
-  background-color: @blueOp;
-  text-align: left;
-  margin: 0 25%;
-  padding-left: 5%;
-}
-
-button.add {
-  letter-spacing: normal;
-  width: 300px;
-  height: 60px;
-  margin: 0 0 2% 0;
-}
-
-button#submitCourse {
-  height: 60px;
-  letter-spacing: normal;
-  margin: 0 0 2% 0;
-}
-
-#questions {
-  height: 400px;
-  overflow: auto;
-}
-
-.questionField {
-  margin-bottom: 20px;
-}
-
-input#title,
-input#video {
-  margin: 0 2% 0 0;
-}
-
-input.questions,
-input.answers1,
-input.answers2,
-input.answers3,
-input.answers4 {
-  display: block;
-}
-
-button.deleteQuestion {
-  height: 30px;
-  font-size: 0.8em;
-  letter-spacing: normal;
-  padding: 2px;
-  margin: 1% 0 2% 0;
-}
-
-/*=============Past Courses===============*/
-
-#pastCourses {
-  width: 100%;
-  height: 40%;
-  background-color: @tertiary;
-  margin: 0;
-}
-
-.pastCourse {
-  width: 20%;
-  text-align: left;
-  position: relative;
-  float: left;
-  padding: 1% 2% 2% 2%;
-  margin: 2%;
-  background-color: @green;
-
-}
-
-h3.courseTitle {
-  width: 100%;
-  text-decoration: underline;
-}
-
-
-/*
-***********************
-* =marisa
-***********************
-*/
-
-/*=============Course===============*/
 
 #course {
   height: 70%;
   width: 50%;
+  min-height: 450px;
   border: 5px solid white;
   border-radius: 10px;
-  margin: auto;
+  margin: 5% auto;
   padding: 0;
   overflow: auto;
 }
 
-#courseNav {
+#course-nav {
   position: fixed;
+  margin-top: 5%;
+}
+
+.fail {
+  color: red;
 }
 
 
 /*=============Test===============*/
+
 h1.testTitle {
   background-color: @green;
   margin: 0;
@@ -386,12 +449,11 @@ form#test {
   text-align: left;
   position: absolute;
   margin-left: 2%;
-
-  // height: 10%;
 }
 
 .question h2 {
   font-size: 2em;
+  margin-bottom: 0;
 }
 
 #answers {
@@ -423,13 +485,57 @@ button.submitTest, button.next {
 }
 
 button.next {
-  margin: 10% 42% 0 38%;
+  margin: 5% auto;
 }
 
 button.submitTest {
-  margin: 10% 42% 0 38%;
+  margin: 5% auto;
 }
 
-.video:hover, .test:hover {
-  color: @green;
+
+/*=============Flashcards==============*/
+
+.container {
+  width: 49%;
+  height: 50%;
+  position: relative;
+  perspective: 100;
+  color: black;
+  margin: auto;
+  position: absolute;
+}
+
+.card, .front, .back {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 4px solid black;
+  line-height: 9;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition-duration: .5s;
+  transform-origin: center center;
+}
+
+.front, .back {
+  display: block;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.front {
+  z-index: 3;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.rotate, .match {
+  transform: rotateY(180deg);
 }
